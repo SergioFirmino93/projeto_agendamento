@@ -1,0 +1,420 @@
+
+
+/* 
+O * seleciona TODOS os elementos da página.
+Muito usado para resetar estilos padrões do navegador.
+*/
+*{
+
+    /* Remove margens automáticas do navegador */
+    margin: 0;
+
+    /* Remove espaçamentos internos padrões */
+    padding: 0;
+
+    /*
+    Faz largura e altura incluírem:
+    padding + border
+
+    Isso facilita MUITO o controle do layout.
+    */
+    box-sizing: border-box;
+}
+
+
+
+body{
+
+    /*
+    Define a fonte principal da página.
+
+    Arial -> primeira opção
+    Helvetica -> segunda opção
+    sans-serif -> fonte padrão caso não encontre as outras
+    */
+    font-family: Arial, Helvetica, sans-serif;
+
+    /*
+    Cria um fundo degradê.
+
+    Vai do cinza (#DCDCDC)
+    para azul (#6495ED)
+    */
+    background: linear-gradient(#DCDCDC, #6495ED);
+
+    /*
+    Centraliza elementos no eixo horizontal.
+
+    OBS:
+    Só funciona corretamente se tiver display:flex.
+    */
+    justify-content: center;
+
+    /*
+    Define altura total da tela.
+    
+    100vh = 100% da altura da janela do navegador
+    */
+    min-height: 100vh;
+
+    
+}
+
+
+
+header{
+
+    /* Largura total da tela */
+    width: 100%;
+
+    /* Altura do header */
+    height: 80px;
+
+    /* Cor de fundo */
+    background: white;
+
+    /*
+    Ativa o Flexbox.
+
+    Permite alinhar elementos lado a lado.
+    */
+    display: flex;
+
+    /*
+    Alinha os itens verticalmente ao centro.
+    */
+    align-items: center;
+
+    /*
+    Cria espaço entre os elementos.
+
+    Exemplo:
+    logo -------- menu -------- botões
+    */
+    justify-content: space-between;
+
+    /*
+    Espaçamento interno lateral.
+
+    0 = cima/baixo
+    60px = esquerda/direita
+    */
+    padding: 0 60px;
+
+    /*
+    Cria sombra suave embaixo do header.
+
+    rgba:
+    0,0,0 = preto
+    0.05 = transparência
+    */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+
+
+.logo{
+
+    /* Tamanho do texto */
+    font-size: 28px;
+
+    /* Deixa texto em negrito */
+    font-weight: bold;
+
+    /* Cor roxa */
+    color: #5b2be0;
+}
+
+
+
+.menu{
+
+    /*
+    Deixa os itens lado a lado.
+    */
+    display: flex;
+
+    /*
+    Espaçamento entre os itens do menu.
+    */
+    gap: 40px;
+
+    /*
+    Remove bolinhas da lista.
+    */
+    list-style: none;
+}
+
+
+
+.menu li{
+
+    /*
+    Muda cursor para mãozinha.
+    */
+    cursor: pointer;
+
+    /*
+    Faz animações suaves.
+    */
+    transition: 0.3s;
+}
+
+
+
+/*
+:hover ativa quando passa o mouse em cima.
+*/
+.menu li:hover{
+
+    /* Troca cor do texto */
+    color: #5b2be0;
+    text-decoration: underline;
+    color: #000;
+}
+
+
+
+.btn-login{
+
+    /*
+    Espaçamento interno.
+
+    12px = cima/baixo
+    25px = esquerda/direita
+    */
+    padding: 12px 25px;
+
+    /* Remove borda padrão */
+    border: none;
+
+    /* Arredonda cantos */
+    border-radius: 15px;
+
+    /* Cor de fundo */
+    background: #5b2be0;
+
+    /* Cor do texto */
+    color: white;
+
+    /* Mãozinha ao passar mouse */
+    cursor: pointer;
+
+    /* Suaviza animações */
+    transition: 0.3s;
+
+    /*
+    Flex dentro do botão.
+    Útil se colocar ícone futuramente.
+    */
+    display: flex;
+}
+
+
+
+.btn-login:hover{
+
+    /*
+    Cor mais escura ao passar mouse.
+    */
+    background: #4720bd;
+
+    text-decoration: underline;
+}
+
+
+
+.btn-cadastro{
+
+    /* Espaçamento interno */
+    padding: 12px 25px;
+
+    /* Remove borda */
+    border: none;
+
+    /* Bordas arredondadas */
+    border-radius: 15px;
+
+    /* Fundo roxo */
+    background: #5b2be0;
+
+    /* Texto branco */
+    color: white;
+
+    /* Cursor mãozinha */
+    cursor: pointer;
+
+    /* Transição suave */
+    transition: 0.3s;
+
+    
+}
+
+
+a{
+
+    /* Espaçamento interno */
+    padding: 12px 25px;
+
+    /* Bordas arredondadas */
+    border-radius: 15px;
+
+    /* Texto branco */
+    color: white;
+
+    /* Cursor mãozinha */
+    cursor: pointer;
+
+    /* Transição suave */
+    transition: 0.3s;
+    
+    /* Tira a marcação em baixo do texto*/
+    text-decoration: none;
+}
+
+
+
+.btn-cadastro:hover{
+
+    /* Fundo mais escuro */
+    background: #4720bd;
+    text-decoration: underline;
+}
+
+
+
+nav{
+
+    /*
+    Organiza elementos lado a lado.
+    */
+    display: flex;
+
+    /*
+    Espaço entre elementos.
+    */
+    gap: 10px;
+
+    /*
+    Centraliza verticalmente.
+    */
+    align-items: center;
+}
+
+
+.container-busca{
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-top: 80px;
+}
+
+
+.busca{
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    width: 25%;
+
+    margin-top: 80px;
+
+    background: #fff;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 12px 12px rgba(0, 0, 0, 0.30);
+
+    width: 400px;
+           
+}
+
+.busca h1{
+    width: 400px;
+        
+    padding: 25px;
+
+    border-radius: 15px;
+
+    
+}
+
+
+
+.box-agendamento h2{
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+    color: #5b2be0;
+}
+
+
+
+.campo{
+
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+
+
+.campo label{
+
+    margin-bottom: 10px;
+
+    font-weight: bold;
+}
+
+
+
+.campo input{
+
+    height: 45px;
+
+    border-radius: 10px;
+
+    border: 1px solid #ccc;
+
+    padding-left: 15px;
+
+    outline: none;
+}
+
+
+
+.btn-buscar{
+
+    width: 100%;
+
+    height: 50px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #5b2be0;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+.btn-buscar:hover{
+    background: linear-gradient(#5b2be0, #4720bd);
+    transition: 50s;
+}
