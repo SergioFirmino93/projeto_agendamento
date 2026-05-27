@@ -5,7 +5,7 @@
 }
 
 body{
-    background: linear-gradient(#DCDCDC, #6495ED);
+    background: linear-gradient(#DCDCDC, #87CEFA);
         
     min-height: 100vh;
     
@@ -65,4 +65,32 @@ input{
     border: 1px solid rgb(150, 185, 240);
     margin-bottom: 15px;
     
+}
+
+.menu a{
+    color: #000;
+}
+
+.btn-login-in{
+
+    /* Espaçamento interno */
+    padding: 12px 25px;
+
+    /* Remove borda */
+    border: none;
+
+    /* Bordas arredondadas */
+    border-radius: 15px;
+
+    /* Fundo roxo */
+    background: #5b2be0;
+
+    /* Texto branco */
+    color: white;
+
+    /* Cursor mãozinha */
+    cursor: pointer;
+
+    /* Transição suave */
+    transition: 0.3s;
 }

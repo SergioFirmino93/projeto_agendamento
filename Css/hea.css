@@ -40,7 +40,7 @@ body{
     Vai do cinza (#DCDCDC)
     para azul (#6495ED)
     */
-    background: linear-gradient(#DCDCDC, #6495ED);
+    background: linear-gradient(#DCDCDC, #87CEFA);
 
     /*
     Centraliza elementos no eixo horizontal.
@@ -175,40 +175,31 @@ header{
 
 
 
-.btn-login{
+.btn-login {
 
-    /*
-    Espaçamento interno.
-
-    12px = cima/baixo
-    25px = esquerda/direita
-    */
+    /* Espaçamento interno */
     padding: 12px 25px;
 
-    /* Remove borda padrão */
+    /* Remove borda */
     border: none;
 
-    /* Arredonda cantos */
+    /* Bordas arredondadas */
     border-radius: 15px;
 
-    /* Cor de fundo */
+    /* Fundo roxo */
     background: #5b2be0;
 
-    /* Cor do texto */
+    /* Texto branco */
     color: white;
 
-    /* Mãozinha ao passar mouse */
+    /* Cursor mãozinha */
     cursor: pointer;
 
-    /* Suaviza animações */
+    /* Transição suave */
     transition: 0.3s;
-
-    /*
-    Flex dentro do botão.
-    Útil se colocar ícone futuramente.
-    */
-    display: flex;
 }
+
+
 
 
 
@@ -220,6 +211,8 @@ header{
     background: #4720bd;
 
     text-decoration: underline;
+
+    
 }
 
 
