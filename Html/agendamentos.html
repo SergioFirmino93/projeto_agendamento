@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamentos</title>
+
+    <link rel="stylesheet" href="../Css/hea.css">
+    
+</head>
+
+<body>
+    
+<header>
+        
+
+    <div class="logo">
+        Clínica Vida
+    </div>
+
+    <nav>
+
+        <ul class="menu">
+
+            
+
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            
+
+            <li>Início</li>
+
+            
+            <li>Área do paciente</li>
+
+            
+            <li>Sobre nós</li>
+
+            
+            
+
+        </ul>
+
+    </nav>
+
+    
+    <nav>
+
+        
+            <button class="btn-login">
+                <a href="login.html">Login</a>
+            </button>
+
+            <button class="btn-cadastro">
+                <a href="cadastro.html">Faça seu Cadastro Aqui!</a>
+            </button>
+
+    </nav>
+           
+    
+</header>
+
+
+    
+
+<main class="container-busca-agenda">
+
+    <section class="busca-salas">
+
+        <h1>Agende sua Consulta</h1>
+
+        <section class="box-agendamento">
+
+            <h2>Consulta Presencial</h2>
+
+            <div class="campo">
+
+                <label>Especialidade</label>
+
+                <input type="text" placeholder="Busque uma especialidade">
+
+            </div>
+
+            <button class="btn-buscar">Consultar</button>
+            
+
+        </section>
+
+    </section>
+
+    <!-- DIREITA -->
+    <section class="container-busca-calendario">
+
+        <!-- TOPO DAS DATAS -->
+        <div class="topo-datas">
+
+            <button id="anterior" class="seta">◀</button>
+
+            <div class="datas">
+
+                <div class="data ativa">
+                    <h3 id="dataAtual">29/05</h3>
+                    <p>Hoje</p>
+                </div>
+
+                <div class="data">
+                    <h3>30/05</h3>
+                    <p>Amanhã</p>
+                </div>
+
+                <div class="data">
+                    <h3>31/05</h3>
+                    <p>Domingo</p>
+                </div>
+            
+                       
+            </div>
+
+            <button id="proximo" class="seta">▶</button>  
+
+            <button>📅</button>
+                        
+
+        </div>
+
+
+        <!-- SALAS -->
+        <div class="lista-salas">
+
+            <div class="card-sala">
+                <h2>Sala 1</h2>
+
+                <p>Estágiario Jair Bolsonaro</p>
+
+                <button>17:00</button>
+            </div>
+
+
+            <div class="card-sala">
+                <h2>Sala 2</h2>
+
+                <p>Estágiaria Marta Suplicy</p>
+
+                <button>16:10</button>
+            </div>
+
+            <div class="card-sala">
+                <h2>Sala 3</h2>
+
+                <p>Estágiario Donald Trump</p>
+
+                <button>12:25</button>
+            </div>
+
+            <div class="card-sala">
+                <h2>Sala Infantil</h2>
+
+                <p>Estágiaria Dilma Rousseff</p>
+
+                <button>09:15</button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+<script src="../JS/movimento.js"></script>
+
+</body>
+</html>

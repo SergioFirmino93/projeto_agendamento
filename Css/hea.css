@@ -295,28 +295,135 @@ nav{
 }
 
 
-.container-busca{
+.container-busca-agenda{
 
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    margin-top: 100px;
+
+    gap: 10px;
+
+    
+}
+
+.container-busca-calendario{
+    width: 650px;
+
+    background: #fff;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 10px rgba(0,0,0,0.20);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.topo-datas{
     display: flex;
 
     justify-content: center;
 
     align-items: center;
 
-    margin-top: 80px;
+    gap: 10px;
 }
 
 
-.busca{
+.seta {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.datas{
+    display: flex;
+
+    gap: 10px;
+
+    align-items: center;
+}
+
+
+.data{
+    width: 90px;
+
+    height: 70px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
     display: flex;
 
     flex-direction: column;
 
+    justify-content: center;
+
     align-items: center;
 
-    width: 25%;
+    cursor: pointer;
+}
 
-    margin-top: 80px;
+
+.ativa{
+    background: #5b2be0;
+
+    color: white;
+}
+
+
+.lista-salas{
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+.card-sala{
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    
+}
+
+.card-sala button{
+    margin-top: 15px;
+
+    border: none;
+
+    background: #eee;
+
+    padding: 10px 15px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+}
+
+.busca-salas{
+    width: 400px;
 
     background: #fff;
 
@@ -324,13 +431,10 @@ nav{
 
     border-radius: 15px;
 
-    box-shadow: 0 12px 12px rgba(0, 0, 0, 0.30);
-
-    width: 400px;
-           
+    box-shadow: 0 12px 12px rgba(0,0,0,0.30);
 }
 
-.busca h1{
+.busca-salas h1{
     width: 400px;
         
     padding: 25px;
