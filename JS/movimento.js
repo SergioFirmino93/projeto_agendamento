@@ -40,23 +40,4 @@ document.getElementById("anterior").addEventListener("click", () => {
 
 
 
-const base = new Date();
 
-function atualizarDatas(){
-
-    const d1 = new Date(base);
-    const d2 = new Date(base);
-    const d3 = new Date(base);
-
-    d2.setDate(d2.getDate() + 1);
-    d3.setDate(d3.getDate() + 2);
-
-    document.getElementById("dia1").textContent =
-        d1.toLocaleDateString("pt-BR");
-
-    document.getElementById("dia2").textContent =
-        d2.toLocaleDateString("pt-BR");
-
-    document.getElementById("dia3").textContent =
-        d3.toLocaleDateString("pt-BR");
-}
