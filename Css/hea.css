@@ -295,6 +295,84 @@ nav{
 }
 
 
+.container-pesquisar{
+    
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-top: 100px;
+
+    gap: 50px;
+  
+
+}
+
+.busca-ou-pesquisa{
+    width: 500px;
+
+    background: #fff;
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 12px 12px rgba(0,0,0,0.30);
+}
+
+.busca-ou-pesquisa h1{
+
+    width: 400px;
+        
+    padding: 15px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+   
+}
+
+
+
+.box-pesquisa{
+
+    width: 400px;
+
+    background: #fff;
+
+    padding: 25px;
+
+    border-radius: 15px;   
+
+
+    
+}
+
+.box-pesquisa h2{
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+    color: #5b2be0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .container-busca-agenda{
 
     display: flex;
@@ -463,7 +541,7 @@ nav{
 
     flex-direction: column;
 
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 
