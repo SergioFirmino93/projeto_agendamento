@@ -631,3 +631,32 @@ nav{
     color: #777 !important;
     cursor: not-allowed !important;
 }
+
+
+
+.area-paciente{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.box-paciente{
+    width: 600px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 12px 12px rgba(0,0,0,0.30);
+}
+
+.box-paciente h1{
+    text-align: center;
+    margin-bottom: 25px;
+    color: #5b2be0;
+}
+
+.card-agendamento{
+    background: #f7f7f7;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}

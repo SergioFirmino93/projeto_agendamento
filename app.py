@@ -106,6 +106,48 @@ def agendar():
 
     return jsonify({"mensagem": "Agendamento realizado com sucesso"})
 
+
+
+
+@app.route("/meus-agendamentos")
+def meus_agendamentos():
+    id_paciente = request.args.get("id_paciente", 1)
+
+    conexao = conectar()
+    cursor = conexao.cursor(dictionary=True)
+
+    cursor.execute("""
+        SELECT 
+            a.id_agendamento,
+            h.data_consulta,
+            h.horario,
+            s.nome AS sala,
+            e.nome AS estagiario,
+            esp.nome AS especialidade,
+            a.status
+        FROM agendamentos a
+        JOIN horarios_disponiveis h ON a.id_horario = h.id_horario
+        JOIN salas s ON h.id_sala = s.id_sala
+        JOIN estagiarios e ON h.id_estagiario = e.id_estagiario
+        JOIN especialidades esp ON e.id_especialidade = esp.id_especialidade
+        WHERE a.id_paciente = %s
+        ORDER BY h.data_consulta, h.horario
+    """, (id_paciente,))
+
+    dados = cursor.fetchall()
+
+    for item in dados:
+        item["data_consulta"] = item["data_consulta"].strftime("%d/%m/%Y")
+        item["horario"] = str(item["horario"])[:5]
+
+    cursor.close()
+    conexao.close()
+
+    return jsonify(dados)
+
+
+
+
 print(app.url_map)
 
 if __name__ == "__main__":
