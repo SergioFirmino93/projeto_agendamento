@@ -523,6 +523,21 @@ nav{
 }
 
 
+.box-agendamento{
+
+    width: 300px;
+
+    background: #fff;
+
+    padding: 25px;
+
+    border-radius: 15px;   
+
+
+    
+}
+
+
 
 .box-agendamento h2{
 
@@ -592,4 +607,27 @@ nav{
 .btn-buscar:hover{
     background: linear-gradient(#5b2be0, #4720bd);
     transition: 50s;
+}
+
+
+.horarios{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.horarios button{
+    border: none;
+    background: #5b2be0;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.agendado{
+    background: #ccc !important;
+    color: #777 !important;
+    cursor: not-allowed !important;
 }
