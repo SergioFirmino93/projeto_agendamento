@@ -14,6 +14,44 @@
 
 
 </head>
+
+
+
+<script>
+async function fazerLogin(){
+
+    const email = document.getElementById("emailLogin").value;
+    const senha = document.getElementById("senhaLogin").value;
+
+    const resposta = await fetch("http://127.0.0.1:5000/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            email: email,
+            senha: senha
+        })
+    });
+
+    const dados = await resposta.json();
+
+    if(resposta.ok){
+        localStorage.setItem("id_paciente", dados.id_paciente);
+        localStorage.setItem("nome_paciente", dados.nome);
+
+        window.location.href = "hea.html";
+    } else {
+        alert(dados.erro);
+    }
+}
+</script>
+
+
+
+
+
+
 <body>
     
     <div class="principal">
@@ -24,12 +62,12 @@
             <h1>Faça seu Login</h1>
             
             <div class="input-box">
-                <input placeholder="Usuário" type="email">
+                <input id="emailLogin" placeholder="Usuário" type="email">
                 <i class="fa-solid fa-user"></i>
             </div>
 
             <div class="input-box">
-                <input placeholder="Senha" type="password">
+                <input id="senhaLogin" placeholder="Senha" type="password">
                 <i class="fa-solid fa-lock"></i>
             </div>
 
@@ -41,7 +79,7 @@
                 <a href="#">Esqueci a senha</a>
             </div>
 
-            <button type="submit" class="login">Login</button>
+            <button type="button" class="login" onclick="fazerLogin()">Login</button>
 
             <div class="register-link">
                 <p>Não tem uma conta <a href="cadastro.html">Cadastre-se</a></p>

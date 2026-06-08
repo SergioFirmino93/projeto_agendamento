@@ -638,6 +638,7 @@ nav{
     display: flex;
     justify-content: center;
     margin-top: 100px;
+    border-radius: 15px;
 }
 
 .box-paciente{
@@ -659,4 +660,241 @@ nav{
     padding: 20px;
     border-radius: 12px;
     margin-bottom: 15px;
+}
+
+
+
+.btn-cancelar{
+    margin-top: 15px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background: #d9534f;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-cancelar:hover{
+    background: #b52b27;
+}
+
+
+.menu a{
+    color: #000;
+}
+
+
+
+
+
+
+@media (max-width: 768px){
+
+    body{
+        min-height: 100vh;
+        height: auto;
+    }
+
+    header{
+        height: auto;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .logo{
+        text-align: center;
+    }
+
+    .menu{
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    header nav{
+        flex-direction: column;
+    }
+
+    .container-pesquisar,
+    .container-busca-agenda,
+    .area-paciente{
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+        padding: 0 15px;
+    }
+
+    .busca-ou-pesquisa,
+    .busca-salas,
+    .container-busca-calendario,
+    .box-paciente{
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .box-pesquisa,
+    .box-agendamento{
+        width: 100%;
+    }
+
+    .topo-datas{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .datas{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .lista-salas{
+        width: 100%;
+    }
+
+    .card-sala,
+    .card-agendamento{
+        width: 100%;
+    }
+
+    .horarios{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .btn-login,
+    .btn-cadastro,
+    .btn-login-in,
+    #btnSair{
+        width: 100%;
+    }
+
+        .busca-ou-pesquisa{
+        width: 90%;
+        max-width: 360px;
+    }
+
+    .box-pesquisa{
+        width: 100%;
+        max-width: 320px;
+        padding: 25px 20px;
+    }
+
+    .busca-ou-pesquisa h1,
+    .box-pesquisa h1{
+        font-size: 24px;
+        text-align: center;
+        white-space: normal;
+    }
+
+    .campo input{
+        width: 100%;
+    }
+
+        .busca-ou-pesquisa,
+    .box-pesquisa{
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .busca-ou-pesquisa h1{
+        font-size: 22px;
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+
+    .container-pesquisar{
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+
+        .container-busca-agenda{
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .busca-salas,
+    .container-busca-calendario{
+        width: 90%;
+        max-width: 360px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .busca-salas h1{
+        font-size: 21px;
+        white-space: nowrap;
+    }
+
+    .box-agendamento{
+        width: 100%;
+        max-width: none;
+        padding: 25px 20px;
+    }
+
+    .topo-datas{
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .datas{
+        width: 100%;
+        gap: 8px;
+    }
+
+    .data{
+        width: 70px;
+        height: 65px;
+    }
+
+    .data h3{
+        font-size: 16px;
+    }
+
+    #calendario{
+        width: 150px;
+    }
+
+    .card-sala{
+        box-sizing: border-box;
+        padding: 18px;
+    }
+
+        .busca-salas h1,
+    .box-agendamento h1{
+        font-size: 22px;
+        overflow-wrap: break-word;
+    }
+
+    .box-paciente{
+    width: 95%;
+    max-width: 360px;
+    padding: 20px;
+}
+
+.box-paciente h1{
+    font-size: 28px;
+    text-align: center;
+}
+
+.card-agendamento{
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.card-agendamento h2{
+    font-size: 22px;
+}
+
+.card-agendamento p{
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.btn-cancelar{
+    width: 100%;
+    margin-top: 15px;
+}
 }

@@ -8,6 +8,8 @@
     
     <link rel="stylesheet" href="../Css/hea.css">
 </head>
+
+
 <body>
     
 <header>
@@ -33,10 +35,12 @@
             <li>Início</li>
 
             
-            <li>Área do paciente</li>
+            <li> <a href="area_paciente.html">Área do paciente</a></li>
 
             
             <li>Sobre nós</li>
+
+            <li id="bemVindo"></li>
 
             
             
@@ -49,12 +53,16 @@
     <nav>
 
         
-            <button class="btn-login">
+            <button id="btnLogin" class="btn-login">
                 <a href="login.html">Login</a>
             </button>
 
-            <button class="btn-cadastro">
+            <button id="btnCadastro" class="btn-cadastro">
                 <a href="cadastro.html">Faça seu Cadastro Aqui!</a>
+            </button>
+
+            <button id="btnSair" style="display:none;">
+                Sair
             </button>
 
     </nav>
@@ -77,11 +85,13 @@
 
                 <label>Especialidade</label>
 
-                <input type="text" placeholder="Busque uma especialidade">
+                <input id="especialidadeHome" type="text" placeholder="Busque uma especialidade">
 
             </div>
 
-            <button class="btn-buscar">Buscar</button>
+            <button id="btnBuscarHome" class="btn-buscar">
+                Buscar
+            </button>
 
         </section>
 
@@ -89,6 +99,10 @@
 
 </main>
 
-        
+
+   
+
+<script src="../JS/home.js"></script>
+
 </body>
 </html>

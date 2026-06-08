@@ -131,6 +131,7 @@ def meus_agendamentos():
         JOIN estagiarios e ON h.id_estagiario = e.id_estagiario
         JOIN especialidades esp ON e.id_especialidade = esp.id_especialidade
         WHERE a.id_paciente = %s
+        AND a.status = 'Agendado'
         ORDER BY h.data_consulta, h.horario
     """, (id_paciente,))
 
@@ -144,6 +145,89 @@ def meus_agendamentos():
     conexao.close()
 
     return jsonify(dados)
+
+
+
+
+
+
+@app.route("/cancelar-agendamento", methods=["POST", "OPTIONS"])
+def cancelar_agendamento():
+    if request.method == "OPTIONS":
+        return jsonify({"ok": True})
+
+    dados = request.get_json()
+
+    id_agendamento = dados.get("id_agendamento")
+
+    conexao = conectar()
+    cursor = conexao.cursor(dictionary=True)
+
+    cursor.execute("""
+        SELECT id_horario
+        FROM agendamentos
+        WHERE id_agendamento = %s
+    """, (id_agendamento,))
+
+    agendamento = cursor.fetchone()
+
+    if not agendamento:
+        cursor.close()
+        conexao.close()
+        return jsonify({"erro": "Agendamento não encontrado"}), 404
+
+    id_horario = agendamento["id_horario"]
+
+    cursor.execute("""
+        UPDATE agendamentos
+        SET status = 'Cancelado'
+        WHERE id_agendamento = %s
+    """, (id_agendamento,))
+
+    cursor.execute("""
+        UPDATE horarios_disponiveis
+        SET disponivel = TRUE
+        WHERE id_horario = %s
+    """, (id_horario,))
+
+    conexao.commit()
+
+    cursor.close()
+    conexao.close()
+
+    return jsonify({"mensagem": "Agendamento cancelado com sucesso"})
+
+
+
+@app.route("/login", methods=["POST", "OPTIONS"])
+def login():
+    if request.method == "OPTIONS":
+        return jsonify({"ok": True})
+
+    dados = request.get_json()
+
+    email = dados.get("email")
+    senha = dados.get("senha")
+
+    conexao = conectar()
+    cursor = conexao.cursor(dictionary=True)
+
+    cursor.execute("""
+        SELECT id_paciente, nome, email
+        FROM pacientes
+        WHERE email = %s AND senha = %s
+    """, (email, senha))
+
+    paciente = cursor.fetchone()
+
+    cursor.close()
+    conexao.close()
+
+    if not paciente:
+        return jsonify({"erro": "Email ou senha inválidos"}), 401
+
+    return jsonify(paciente)
+
 
 
 

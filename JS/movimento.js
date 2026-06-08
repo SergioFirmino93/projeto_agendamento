@@ -527,3 +527,64 @@ async function consultarHorarios(){
 }
 
 
+
+
+
+window.addEventListener("load", () => {
+
+    const especialidadeSalva = localStorage.getItem("especialidadeSelecionada");
+
+    if(especialidadeSalva){
+        document.getElementById("especialidade").value = especialidadeSalva;
+
+        const hoje = new Date();
+        calendario.value = hoje.toISOString().split("T")[0];
+
+        consultarHorarios();
+    }
+
+});
+
+
+function configurarUsuarioLogado(){
+
+    const nomeCompleto = localStorage.getItem("nome_paciente");
+
+    const bemVindo = document.getElementById("bemVindo");
+    const btnLogin = document.getElementById("btnLogin");
+    const btnCadastro = document.getElementById("btnCadastro");
+    const btnSair = document.getElementById("btnSair");
+
+    if(nomeCompleto){
+
+        const primeiroNome = nomeCompleto.split(" ")[0];
+
+        if(bemVindo){
+            bemVindo.textContent = "Bem-vindo, " + primeiroNome;
+        }
+
+        if(btnLogin){
+            btnLogin.style.display = "none";
+        }
+
+        if(btnCadastro){
+            btnCadastro.style.display = "none";
+        }
+
+        if(btnSair){
+            btnSair.style.display = "inline-block";
+        }
+    }
+
+    if(btnSair){
+        btnSair.addEventListener("click", () => {
+            localStorage.removeItem("id_paciente");
+            localStorage.removeItem("nome_paciente");
+            window.location.reload();
+        });
+    }
+}
+
+configurarUsuarioLogado();
+
+

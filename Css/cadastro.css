@@ -94,3 +94,29 @@ input{
     /* Transição suave */
     transition: 0.3s;
 }
+
+
+
+
+@media (max-width: 768px){
+
+    body{
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .container-formulario{
+        width: 100%;
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    .box_clientes{
+        width: 100%;
+        max-width: 420px;
+    }
+
+    input{
+        width: 100%;
+    }
+}
